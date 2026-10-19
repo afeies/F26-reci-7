@@ -16,8 +16,14 @@ const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 // const word = ...
 
 describe('matchGuess', () => {
-  it.todo('returns exactly five colors');
-  it.todo('only uses the colors G, Y, B');
+  it('returns exactly five colors', () => {
+    expect(matchGuess('APPLE', 'ALLEY')).toHaveLength(5);
+  });
+  it('only uses the colors G, Y, B', () => {
+    for (const color of matchGuess('APPLE', 'ALLEY')) {
+      expect(['G', 'Y', 'B']).toContain(color);
+    }
+  });
   it.todo('guessing the secret gives all greens');
   it.todo('never credits a letter more times than the secret contains it');
 });
